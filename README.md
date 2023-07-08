@@ -37,3 +37,10 @@ GitHub.
 В файл ИМЯ_ПРОЕКТА/ИМЯ_ПРОЕКТА/settings.py в список INSTALLED_APPS добавить приложение 
 'women.apps.WomenConfig' (из coolsite/coolsite/settings.py/INSTALLED_APPS вызывается класс
 coolsite/women/apps.py/WomenConfig
+
+Создать обработчик (функция или класс) главной страницы сайта: в файле coolsite/women/views.py создать 
+функцию index (def index(request): return HttpResponse('Страница приложения women.')) и импортировать 
+HttpResponse из модуля django.http.
+
+В файл coolsite/coolsite/urls.py в список urlpatterns добавить путь path('woman/', index) и импортировать
+index из модуля woman/views.
