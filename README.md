@@ -55,3 +55,9 @@ django.urls, в список urlpatterns вместо всех путей доб
 r'^archive/(?P<year>[0-9]{4})', в views.py обработчик archive, отображающий словарь request.GET, и 
 обработчик pageNotFound. Настроить settings.py на боевой режим (DEBUG = False, 
 ALLOWED_HOSTS = ['127.0.0.1']).
+
+Заменить в views.py в функции archive исключения raise Http404() на return redirect('/', permanent=True)
+(permanent=True делает постоянный redirect код 301, False - временный redirect код 302).
+
+Присвоить главной страние имя 'home' в файле women/urls.py и аргументом redirect функции archive
+в файле views.py.
