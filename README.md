@@ -50,3 +50,8 @@ django.urls, в список urlpatterns вместо всех путей доб
 
 Создать файл women/urls.py, в который импортировать path из django.urls и все функции-обработчики из .views,
 создать список urlpatterns.
+
+Добавить в women/urls.py в urlpatterns путь 'cats/<int:catid>/' и шаблон пути 
+r'^archive/(?P<year>[0-9]{4})', в views.py обработчик archive, отображающий словарь request.GET, и 
+обработчик pageNotFound. Настроить settings.py на боевой режим (DEBUG = False, 
+ALLOWED_HOSTS = ['127.0.0.1']).
