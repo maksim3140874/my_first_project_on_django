@@ -42,5 +42,11 @@ coolsite/women/apps.py/WomenConfig
 функцию index (def index(request): return HttpResponse('Страница приложения women.')) и импортировать 
 HttpResponse из модуля django.http.
 
-В файл coolsite/coolsite/urls.py в список urlpatterns добавить путь path('woman/', index) и импортировать
-index из модуля woman/views.
+В файл coolsite/coolsite/urls.py в список urlpatterns добавить путь path('women/', index) и импортировать
+index из модуля women/views.
+
+В coolsite/urls.py вместо импортирования всех функций из women/views импортировать include из модуля
+django.urls, в список urlpatterns вместо всех путей добавить include('women.urls').
+
+Создать файл women/urls.py, в который импортировать path из django.urls и все функции-обработчики из .views,
+создать список urlpatterns.
