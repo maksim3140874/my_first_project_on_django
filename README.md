@@ -61,3 +61,13 @@ ALLOWED_HOSTS = ['127.0.0.1']).
 
 Присвоить главной страние имя 'home' в файле women/urls.py и аргументом redirect функции archive
 в файле views.py.
+
+В settings.py добавить переменные MEDIA_ROOT = os.path.join(BASE_DIR, 'media') и MEDIA_URL = '/media/'.
+
+В coolsite/urls.py добавить условие if settings.DEBUG: urlpatterns += static(settings.MEDIA_URL, 
+document_root=settings.MEDIA_ROOT) для режима отладки.
+
+В women/models.py добавить класс таблицы базы данных Women.
+
+В терминале выполнить команду 'python manage.py makemigrations'. В папке women/migrations будет 
+создан файл 0001_initial.py.
